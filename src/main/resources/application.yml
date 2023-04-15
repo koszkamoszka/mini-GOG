@@ -1,0 +1,12 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/mini-gog?stringtype=unspecified # to make java enums map to postgres enums
+    username: postgres
+    password: postgres
+  jpa:
+    database: postgresql
+    hibernate:
+      ddl-auto: update

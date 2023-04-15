@@ -1,29 +1,29 @@
-CREATE TYPE TYPE as ENUM ('Game', 'DLC', 'Music');
-CREATE TYPE GENRE as ENUM ('Indie', 'casual', 'Adventure', 'RPG', 'Fantasy', 'Horror', 'Arcade', 'Shooter')
+CREATE TYPE GAME_TYPE as ENUM ('Game', 'DLC', 'Music');
+CREATE TYPE GENRE as ENUM ('Indie', 'casual', 'Adventure', 'RPG', 'Fantasy', 'Horror', 'Arcade', 'Shooter');
 
 CREATE TABLE studio (
-                        studio_id SERIAL PRIMARY KEY,
-                        name TEXT,
-                        country TEXT,
-                        foundationDate DATE,
-)
+    studioId SERIAL PRIMARY KEY,
+    name TEXT,
+    country TEXT,
+    foundationDate DATE,
+);
 
 CREATE TABLE game (
-                      game_id SERIAL PRIMARY KEY,
-                      title TEXT NOT NULL,
-                      type TYPE,
-                      publishedDate DATE,
-                      genre GENRE
-
-)
+    gameId SERIAL PRIMARY KEY,
+    title TEXT NOT NULL,
+    type GAME_TYPE,
+    publishedDate DATE,
+    genre GENRE,
+    rating INTEGER
+);
 
 CREATE TABLE user (
-                      user_id SERIAL PRIMARY KEY,
-                      name VARCHAR(20) NOT NULL,
-                      realName TEXT,
-                      email_address TEXT,
-                      password VARCHAR(20) NOT NULL
-)
+    userId SERIAL PRIMARY KEY,
+    name VARCHAR(20) NOT NULL,
+    realName TEXT,
+    emailAddress TEXT,
+    password VARCHAR(20) NOT NULL
+);
 
-CREATE TABLE favourites (
-)
+-- CREATE TABLE favourites (
+-- )
