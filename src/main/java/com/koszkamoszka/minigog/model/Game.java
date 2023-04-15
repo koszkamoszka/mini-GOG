@@ -20,5 +20,6 @@ public class Game {
     private LocalDate publishedDate;
     private List<Studio> studios;
     private Genre genre;
+    private Integer rating;
 }
 
